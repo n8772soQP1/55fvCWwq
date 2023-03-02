@@ -30,7 +30,7 @@ function Library:CreateMain()
 	Credits.Size = UDim2.new(0, 200, 0, 25)
 	Close.ZIndex = 0
 	Credits.Font = Enum.Font.SourceSans
-	Credits.Text = "Made by Ξ⊄✹✤⌸▲☆✮✯☄☾☽☼"
+	Credits.Text = "Made by zenya"
 	Credits.TextColor3 = Color3.fromRGB(255, 255, 255)
 	Credits.TextSize = 14.000
 	Credits.TextXAlignment = Enum.TextXAlignment.Left
