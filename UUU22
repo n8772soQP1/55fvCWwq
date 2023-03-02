@@ -1,0 +1,82 @@
+local Library = {}
+
+function Library:CreateMain()
+	local ScreenUI = Instance.new("ScreenGui")
+	local Main = Instance.new("Frame")
+	local Credits = Instance.new("TextLabel")
+	local Close = Instance.new("ImageButton")
+	local TopFrame = Instance.new("Frame")
+	local Button = Instance.new("TextButton")
+
+
+	ScreenUI.Parent = game:GetService("CoreGui")
+	ScreenUI.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+
+
+	Main.Parent = ScreenUI
+	Main.BackgroundColor3 = Color3.fromRGB(15, 15, 15)
+	Main.BorderSizePixel = 0
+	Main.Position = UDim2.new(0.407725334, 0, 0.431707323, 0)
+	Main.Size = UDim2.new(0, 400, 0, 25)
+	Main.Draggable = true
+	Main.Active = true
+	Main.Selectable = true
+
+	Credits.Parent = Main
+	Credits.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+	Credits.BackgroundTransparency = 1.000
+	Credits.BorderSizePixel = 0	
+	Credits.Position = UDim2.new(0.0149999997, 0, 0, 0)
+	Credits.Size = UDim2.new(0, 200, 0, 25)
+	Close.ZIndex = 0
+	Credits.Font = Enum.Font.SourceSans
+	Credits.Text = "Made by Ξ⊄✹✤⌸▲☆✮✯☄☾☽☼"
+	Credits.TextColor3 = Color3.fromRGB(255, 255, 255)
+	Credits.TextSize = 14.000
+	Credits.TextXAlignment = Enum.TextXAlignment.Left
+
+
+	Close.Parent = Main
+	Close.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+	Close.BackgroundTransparency = 1.000
+	Close.BorderSizePixel = 0
+	Close.LayoutOrder = 5
+	Close.Position = UDim2.new(0.949999988, 0, 0.100000001, 0)
+	Close.Size = UDim2.new(0, 20, 0, 20)
+	Close.ZIndex = 2
+	Close.Image = "rbxassetid://3926305904"
+	Close.ImageRectOffset = Vector2.new(924, 724)
+	Close.ImageRectSize = Vector2.new(36, 36)
+
+
+	TopFrame.Parent = Main
+	TopFrame.BackgroundColor3 = Color3.fromRGB(20, 20, 20)
+	TopFrame.BorderSizePixel = 0
+	TopFrame.Position = UDim2.new(-0.000561535358, 0, 0.989512205, 0)
+	TopFrame.Size = UDim2.new(0, 400, 0, 50)
+		
+	local EpicLibrary = {}
+	
+	
+	function EpicLibrary:NewButton(name, callback)
+		local Button = Instance.new("TextButton")
+		
+	Button.Parent = TopFrame
+	Button.BackgroundColor3 = Color3.fromRGB(15, 15, 15)
+	Button.BorderSizePixel = 0
+	Button.Position = UDim2.new(0, 12, 0, 12)
+	Button.Size = UDim2.new(0, 375, 0, 25)
+	Button.Font = Enum.Font.SourceSans
+	Button.Text = name
+	Button.TextColor3 = Color3.fromRGB(255, 255, 255)
+	Button.TextSize = 14.000
+		Button.MouseButton1Click:Connect(function()
+			callback()
+		end)	
+		
+	end
+
+	return EpicLibrary;
+end
+
+return Library;
